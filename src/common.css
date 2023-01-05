@@ -1,0 +1,74 @@
+:root
+{
+    --bgDark: #191d1f;
+    --bgNormal: #1e2224;
+    --bgLight: #23272a;
+    --bgInput: #32383d;
+    --bgInputActive: hsl(205, 11%, 25%);
+    --accentDark: #557d1c;
+    --accentLight: #86c332;
+
+
+
+    color: #d4d4d4;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+a
+{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--accentLight);
+    text-decoration: inherit;
+}
+
+a:hover
+{
+    color: white;
+}
+
+body
+{
+    display: flex;
+
+    background-color: var(--bgNormal);
+
+    margin: 0;
+
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+h1
+{
+    font-size: 3em;
+}
+
+button
+{
+    font-size: 1.4rem;
+    padding: .5rem 4rem;
+    background-color: var(--accentLight);
+    color: white;
+    border-radius: .2rem;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+button:hover
+{
+    background-color: var(--bgInput);
+}
+
+button:active
+{
+    background-color: var(--bgInputActive);
+}

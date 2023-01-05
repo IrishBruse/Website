@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Root from "./pages/Root"
+import Error from "./pages/Error"
+import Root from "./Root"
 
 function App()
 {
     return (
         <BrowserRouter>
-            <Routes >
-                <Route path="/" element={<Root />}></Route>
-                <Route path="/:page" element={<Root />}></Route>
-                <Route path="*" element={<Root />}></Route>
+            <Routes>
+                <Route path="/" element={<Root />} />
+                <Route path="*" element={<Error />} />
             </Routes>
         </BrowserRouter>
     )
