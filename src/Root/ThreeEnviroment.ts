@@ -1,19 +1,20 @@
-import * as THREE from "three"
-import { FrontSide, MathUtils, MeshBasicMaterial, MeshLambertMaterial, MeshPhysicalMaterial, PointLight, Raycaster, Side, Vector3 } from "three";
-import { GroundProjectedEnv, OrbitControls, RGBELoader } from "three-stdlib";
+import * as THREE from "three";
+import { FrontSide, MeshBasicMaterial, MeshPhysicalMaterial, Raycaster } from "three";
+import { OrbitControls } from "three-stdlib";
 import { DRACOLoader } from "three-stdlib/loaders/DRACOLoader";
 import { GLTFLoader } from "three-stdlib/loaders/GLTFLoader";
 
 export default class ThreeEnviroment
 {
     scene: THREE.Scene;
-    camera: THREE.PerspectiveCamera;
     renderer: THREE.WebGLRenderer;
     geometry: THREE.BoxGeometry;
     material: THREE.MeshBasicMaterial;
     frameId: number | null = null;
 
     raycaster: Raycaster = new Raycaster()
+    controls!: OrbitControls;
+    camera!: THREE.PerspectiveCamera;
 
     constructor(mount: HTMLCanvasElement)
     {
@@ -23,22 +24,18 @@ export default class ThreeEnviroment
         THREE.ColorManagement.legacyMode = false;
 
         this.scene = new THREE.Scene()
-        this.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000)
-        let t = new OrbitControls(this.camera, mount)
+
         this.renderer = new THREE.WebGLRenderer({ antialias: true, canvas: mount, alpha: true })
         this.geometry = new THREE.BoxGeometry(1, 1, 1)
         this.material = new THREE.MeshBasicMaterial({ color: 0x6644aa })
 
         this.renderer.outputEncoding = THREE.sRGBEncoding;
-        this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        this.renderer.toneMapping = THREE.LinearToneMapping;
 
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
         // this.camera.position.z = 5
-        this.camera.position.z = 0.888041
-        this.camera.position.y = 0.530839
-        this.camera.setRotationFromEuler(new THREE.Euler(MathUtils.DEG2RAD * -18, 0, 0));
         this.renderer.setSize(width, height)
 
         const gltfLoader = new GLTFLoader();
@@ -59,12 +56,17 @@ export default class ThreeEnviroment
                 if (o instanceof THREE.Mesh)
                 {
                     let mat = o.material as MeshBasicMaterial;
-                    console.log(mat);
 
                     o.material = new MeshPhysicalMaterial({ color: mat.color, shadowSide: FrontSide, specularIntensity: 0 })
 
                     o.castShadow = true;
                     o.receiveShadow = true;
+                }
+                else if (o instanceof THREE.PerspectiveCamera)
+                {
+                    this.camera = o;
+
+                    this.camera.position.set(o.position.x, o.position.y, o.position.z)
                 }
                 else if (o instanceof THREE.Light)
                 {
@@ -148,14 +150,10 @@ export default class ThreeEnviroment
     {
         if (this.test)
         {
-            this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-            console.log("ACESFilmicToneMapping");
 
         }
         else
         {
-            this.renderer.toneMapping = THREE.LinearToneMapping;
-            console.log("LinearToneMapping");
 
         }
         this.test = !this.test;
