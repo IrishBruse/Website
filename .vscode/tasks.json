@@ -10,6 +10,22 @@
 			"runOptions": {
 				"runOn": "folderOpen"
 			}
+		},
+		{
+			"label": "Process GLB",
+			"dependsOn": "Export GLB",
+			"type": "npm",
+			"script": "gltfjsx",
+			"problemMatcher": [
+				"$tsc"
+			],
+		},
+		{
+			"label": "Export GLB",
+			"type": "shell",
+			"command": "blender /Assets/Prototype.blend -b -P /Assets/Export.py",
+			"problemMatcher": [],
+			"hide": true
 		}
 	]
 }
