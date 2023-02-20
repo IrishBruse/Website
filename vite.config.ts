@@ -6,6 +6,9 @@ export default defineConfig(
     {
         plugins: [react()],
         appType: 'spa',
-        base: "/home/"
+        base: "/home/",
+        build: {
+            outDir: "../IrishBruse.github.io/home",
+        }
     }
 );

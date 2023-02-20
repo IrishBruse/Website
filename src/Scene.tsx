@@ -1,3 +1,4 @@
+import { Html } from "@react-three/drei"
 import { ThreeEvent } from "@react-three/fiber"
 import { Suspense, useEffect, useState } from "react"
 import * as THREE from "three"
@@ -34,7 +35,11 @@ function Scene()
     return <>
         <Suspense fallback={null}>
             <CoffeeCup.Model onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)} onClick={playAnimation} />
-            <Gameboy.Model onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)} onClick={playAnimation} />
+            <Gameboy.Model onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)} onClick={playAnimation} >
+                <Html rotation-x={-Math.PI / 2} position={[1, 0.05, -0.09]} >
+                    <h1>Test</h1>
+                </Html>
+            </Gameboy.Model>
             <Keyboard.Model onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)} onClick={playAnimation} />
             <Monitor.Model />
             <Notepad.Model onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)} onClick={playAnimation} />

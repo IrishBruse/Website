@@ -519,10 +519,10 @@ export function Model(props: JSX.IntrinsicElements['group']) {
             <mesh name="Text077" castShadow receiveShadow geometry={nodes.Text077.geometry} material={materials.KeyText} position={[-0.00019, 0.00565, 0.00174]} rotation={[0.11912, 0, 0]} scale={0.00785} userData={{ name: 'Text.077' }} />
           </mesh>
           <mesh name="Key019" castShadow receiveShadow geometry={nodes.Key019.geometry} material={materials.Keycap} position={[0.1553, 0.0078, -0.00536]} userData={{ name: 'Key.019' }}>
-            <mesh name="Text079" castShadow receiveShadow geometry={nodes.Text079.geometry} material={materials.KeyText} position={[0.00009, 0.00565, 0.00128]} rotation={[0.11912, 0, 0]} scale={0.00785} userData={{ name: 'Text.079' }} />
+            <mesh name="Text079" castShadow receiveShadow geometry={nodes.Text079.geometry} material={materials.KeyText} position={[0.0001, 0.00565, 0.00128]} rotation={[0.11912, 0, 0]} scale={0.00785} userData={{ name: 'Text.079' }} />
           </mesh>
           <mesh name="Key020" castShadow receiveShadow geometry={nodes.Key020.geometry} material={materials.Keycap} position={[0.1553, 0.0078, -0.02981]} userData={{ name: 'Key.020' }}>
-            <mesh name="Text086" castShadow receiveShadow geometry={nodes.Text086.geometry} material={materials.KeyText} position={[0.00009, 0.00565, 0.00135]} rotation={[0.11912, 0, 0]} scale={0.00785} userData={{ name: 'Text.086' }} />
+            <mesh name="Text086" castShadow receiveShadow geometry={nodes.Text086.geometry} material={materials.KeyText} position={[0.0001, 0.00565, 0.00135]} rotation={[0.11912, 0, 0]} scale={0.00785} userData={{ name: 'Text.086' }} />
           </mesh>
           <mesh name="Key021" castShadow receiveShadow geometry={nodes.Key021.geometry} material={materials.Keycap} position={[0.17948, 0.0078, -0.02981]} userData={{ name: 'Key.021' }}>
             <mesh name="Text087" castShadow receiveShadow geometry={nodes.Text087.geometry} material={materials.KeyText} position={[0.00038, 0.00565, 0.00163]} rotation={[0.11912, 0, 0]} scale={0.00785} userData={{ name: 'Text.087' }} />
