@@ -31,7 +31,8 @@ type GLTFResult = GLTF & {
 type ActionName = 'GameboyAction' | 'A' | 'B' | 'Dpad' | 'GBScreen' | 'Select' | 'Start'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export function Model(props: JSX.IntrinsicElements['group'])
+{
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/home/models/Gameboy.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
@@ -44,7 +45,9 @@ export function Model(props: JSX.IntrinsicElements['group']) {
           <mesh name="A" castShadow receiveShadow geometry={nodes.A.geometry} material={materials.Button} position={[0.01447, 0.015, 0.02255]} userData={{ name: 'A' }} />
           <mesh name="B" castShadow receiveShadow geometry={nodes.B.geometry} material={materials.Button} position={[0.02738, 0.015, 0.01198]} userData={{ name: 'B' }} />
           <mesh name="Dpad" castShadow receiveShadow geometry={nodes.Dpad.geometry} material={materials.DPad} position={[-0.02116, 0.01642, 0.01931]} userData={{ name: 'Dpad' }} />
-          <group name="GBScreen" position={[0, 0.01594, -0.03627]} userData={{ name: 'GBScreen' }} />
+          <group name="GBScreen" position={[0, 0.01594, -0.03627]} userData={{ name: 'GBScreen' }} >
+            {props.children}
+          </group>
           <mesh name="Select" castShadow receiveShadow geometry={nodes.Select.geometry} material={materials.StartSelect} position={[-0.005, 0.01594, 0.0437]} userData={{ name: 'Select' }} />
           <mesh name="Start" castShadow receiveShadow geometry={nodes.Start.geometry} material={materials.StartSelect} position={[0.005, 0.01594, 0.0437]} userData={{ name: 'Start' }} />
         </group>

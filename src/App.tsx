@@ -1,4 +1,4 @@
-import { OrbitControls, PerspectiveCamera, ContactShadows } from "@react-three/drei"
+import { OrbitControls, PerspectiveCamera, ContactShadows, Html } from "@react-three/drei"
 import { Canvas, RootState } from "@react-three/fiber"
 import { Suspense, useRef } from "react"
 import * as THREE from "three"

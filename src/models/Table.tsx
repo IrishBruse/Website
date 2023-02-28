@@ -23,7 +23,8 @@ type GLTFResult = GLTF & {
 type ActionName = 'Table' | 'Legs'
 type GLTFActions = Record<ActionName, THREE.AnimationAction>
 
-export function Model(props: JSX.IntrinsicElements['group']) {
+export function Model(props: JSX.IntrinsicElements['group'])
+{
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/home/models/Table.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
