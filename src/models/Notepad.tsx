@@ -16,9 +16,9 @@ type GLTFResult = GLTF & {
     Metal_Ring: THREE.Mesh
   }
   materials: {
-    Paper: THREE.MeshStandardMaterial
-    Line: THREE.MeshStandardMaterial
-    MetalRing: THREE.MeshStandardMaterial
+    Paper: THREE.MeshPhysicalMaterial
+    Line: THREE.MeshPhysicalMaterial
+    MetalRing: THREE.MeshPhysicalMaterial
   }
 }
 

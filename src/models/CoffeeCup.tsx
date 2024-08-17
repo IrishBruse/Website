@@ -15,8 +15,8 @@ type GLTFResult = GLTF & {
     Coffee: THREE.Mesh
   }
   materials: {
-    Cup: THREE.MeshStandardMaterial
-    Coffee: THREE.MeshStandardMaterial
+    Cup: THREE.MeshPhysicalMaterial
+    Coffee: THREE.MeshPhysicalMaterial
   }
 }
 
@@ -28,6 +28,8 @@ export function Model(props: JSX.IntrinsicElements['group'])
   const group = useRef<THREE.Group>()
   const { nodes, materials, animations } = useGLTF('/home/models/CoffeeCup.glb') as unknown as GLTFResult
   const { actions } = useAnimations<GLTFActions>(animations, group)
+  console.log(materials);
+
   return (
     <group animations={actions} ref={group} {...props} dispose={null}>
       <group name="Scene">

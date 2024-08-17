@@ -5,7 +5,7 @@
     "type": "module",
     "homepage": "https://irishbruse.github.io/",
     "scripts": {
-        "dev": "vite",
+        "start": "vite",
         "build": "tsc && vite build --outDir A:/IrishBruse.github.io/home/ --emptyOutDir true",
         "preview": "vite preview",
         "predeploy": "npm run build",

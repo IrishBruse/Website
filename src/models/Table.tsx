@@ -15,8 +15,8 @@ type GLTFResult = GLTF & {
     Legs: THREE.Mesh
   }
   materials: {
-    Table: THREE.MeshStandardMaterial
-    TableLeg: THREE.MeshStandardMaterial
+    Table: THREE.MeshPhysicalMaterial
+    TableLeg: THREE.MeshPhysicalMaterial
   }
 }
 

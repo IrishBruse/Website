@@ -224,9 +224,9 @@ type GLTFResult = GLTF & {
     Plane: THREE.Mesh
   }
   materials: {
-    ['Plastic.001']: THREE.MeshStandardMaterial
-    Keycap: THREE.MeshStandardMaterial
-    KeyText: THREE.MeshStandardMaterial
+    ['Plastic.001']: THREE.MeshPhysicalMaterial
+    Keycap: THREE.MeshPhysicalMaterial
+    KeyText: THREE.MeshPhysicalMaterial
   }
 }
 

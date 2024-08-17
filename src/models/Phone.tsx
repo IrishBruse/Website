@@ -14,7 +14,7 @@ type GLTFResult = GLTF & {
     Phone: THREE.Mesh
   }
   materials: {
-    Phone: THREE.MeshStandardMaterial
+    Phone: THREE.MeshPhysicalMaterial
   }
 }
 

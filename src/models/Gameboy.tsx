@@ -20,11 +20,11 @@ type GLTFResult = GLTF & {
     Start: THREE.Mesh
   }
   materials: {
-    GameboyShell: THREE.MeshStandardMaterial
-    GameboyScreenBorder: THREE.MeshStandardMaterial
-    Button: THREE.MeshStandardMaterial
-    DPad: THREE.MeshStandardMaterial
-    StartSelect: THREE.MeshStandardMaterial
+    GameboyShell: THREE.MeshPhysicalMaterial
+    GameboyScreenBorder: THREE.MeshPhysicalMaterial
+    Button: THREE.MeshPhysicalMaterial
+    DPad: THREE.MeshPhysicalMaterial
+    StartSelect: THREE.MeshPhysicalMaterial
   }
 }
 

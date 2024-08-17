@@ -16,9 +16,9 @@ type GLTFResult = GLTF & {
     MonitorStand: THREE.Mesh
   }
   materials: {
-    ['Plastic.001']: THREE.MeshStandardMaterial
-    Button: THREE.MeshStandardMaterial
-    PlasticStand: THREE.MeshStandardMaterial
+    ['Plastic.001']: THREE.MeshPhysicalMaterial
+    Button: THREE.MeshPhysicalMaterial
+    PlasticStand: THREE.MeshPhysicalMaterial
   }
 }
 
